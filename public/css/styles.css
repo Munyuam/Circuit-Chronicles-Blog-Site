@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+:root{
+    --primarycolor: rgb(250,241,231);
+    --textcolor: black;    
+    --textsize: 17px;
+    --font:'TikTok Sans', sans-serif;
+    --textsizeHeader : 22px;
+    --textsizeFooter: 15px;
+    --hovertxt: #034C8C;
+}
+/* ================UNIVERSAL STYLING ============== */
+*{
+    background-color: var(--primarycolor);
+    font-family: var(--font);
+}
+
+.bxr{
+    font-size: var(--textsizeHeader);
+}
+body{
+    width: 75%;
+    margin: auto;
+    text-align: center;
+}
+/* =============== HEADER STYLING =================== */
+header{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: transparent;    
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 30px;
+}
+header nav ul li{
+    list-style: none;
+    font-size: var(--textsizeHeader);
+}
+header nav ul li a{
+    text-decoration: none;
+    color: var(--textcolor);
+    position: relative;
+    transition: color 0.3s ease;
+}
+header nav ul li a::after{
+   content: ' ';
+  position: absolute;
+    width: 0; 
+    height: 2px; 
+    background-color: var(--hovertxt); 
+    bottom: -2px; 
+    left: 0;
+    transition: width 0.3s ease; 
+}
+
+header nav ul li a:hover::after {
+    width: 100%; 
+}
+
+header nav ul li a:hover {
+    color: var(--hovertxt);
+}
+
+header nav ul li a:hover,
+header nav ul li:hover{
+    color: var(--hovertxt);
+    cursor: pointer;
+}
+/* ==============FOOTER STYLING ======== */
+footer{
+    font-size: var(--textsizeFooter);
+    color: rgb(17, 17, 17);
+}
