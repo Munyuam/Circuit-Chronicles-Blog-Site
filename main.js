@@ -3,9 +3,12 @@ require('dotenv').config();
 const route = require('./routes/route')
 const expressLayouts = require('express-ejs-layouts')
 const path = require('path');
+const dbconnect = require('./server/config/dbconnect')
+const Blogs = require('./server/model/dbschema')
 const port = process.env.PORT || 3001;
 const app = express();
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
@@ -15,6 +18,7 @@ app.set('layout', 'layout/main');
 app.use(expressLayouts);
 
 app.use(express.static(path.join(__dirname,'public')));
+dbconnect();
 
 app.use('/', route);
 

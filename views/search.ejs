@@ -1,3 +1,42 @@
 <article>
-    <h3>/ Search</h3>
+<section class="search-container">
+    <form action="/search" method="post">
+        <input type="text" placeholder="Search Blog..." name="search" id="search-input" class="search-input" value="<%= searchQuery || '' %>">
+        <button type="submit" class="searchBtn"><i class='bxr bx-search-big'></i></button>
+    </form>
+</section>
+
+<% if (searchQuery) { %>
+    <p>Showing results for "<%= searchQuery %>"</p>
+<% } %>
+
+<section class="blog-container">
+    <div class="blog-grid">
+        <% blogs.forEach(blog => { %>
+            <div class="blog-item">
+                <div class="blog-item-image">
+                    <img src="https://i.pinimg.com/736x/1b/8b/2d/1b8b2d13e3e3298e4d10970c0ebf2d56.jpg" alt="blog-image">
+                </div>
+                <div class="blog-item-txt">
+                    <h3><a href="/read/<%= blog._id %>"> <%= blog.title %></a></h3>
+                    <p><%= blog.content.substring(0,150) %></p>
+                    <span class="blog_date">
+                        <%= blog.createdAt.toDateString() %>
+                    </span>
+                    <a href="/read/<%= blog._id %>" class="read-more">Read more</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <div class="pagination">
+        <% if (hasPrev) { %>
+            <a href="?page=<%= currentPage - 1 %>&q=<%= encodeURIComponent(searchQuery || '') %>" class="pagination-btn">Previous</a>
+        <% } %>
+        <span class="pagination-info">Page <%= currentPage %> of <%= totalPages %></span>
+        <% if (hasNext) { %>
+            <a href="?page=<%= currentPage + 1 %>&q=<%= encodeURIComponent(searchQuery || '') %>" class="pagination-btn">Next</a>
+        <% } %>
+    </div>
+</section>
 </article>
