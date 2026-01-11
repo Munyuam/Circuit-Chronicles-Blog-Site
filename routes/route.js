@@ -108,7 +108,7 @@ router.get('/search', async (req, res) => {
         const hasPrev = page > 1;
         const hasNext = page < totalPages;
 
-        res.render('index', {
+        res.render('search', {
             blogs,
             currentRoute: '/search',
             currentPage: page,

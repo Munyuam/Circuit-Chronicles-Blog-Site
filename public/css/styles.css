@@ -142,7 +142,7 @@ color: var(--hovertxt);
         flex-direction: column;
         padding: 20px;
         justify-content: center;
-        margin-top: -60px;
+        /* margin-top: -60px; */
     }
 
     .blog-item {
@@ -337,7 +337,7 @@ color: var(--hovertxt);
 }
 
 button {
-    background-color: #4a90e2;
+    background-color: #0056b3;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -353,7 +353,7 @@ button i {
 }
 
 button:hover {
-    background-color: #357abd;
+    background-color: #045cbb;
 }
 
 @media (max-width: 768px) {
@@ -368,6 +368,7 @@ button:hover {
 /* ============== SEARCH PAGE STYLINGG ========== */
 .search-container{
     position: relative;
+    margin-bottom: -90px;
 }
 .search-input{
     padding: 20px;
@@ -413,6 +414,64 @@ button:hover {
     background-color: inherit;
     color: #c1bfbf;
 }
+.search-query-message{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* ==============LOGIN PAGE ============= */
+.login-container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+     .form-group .form-input {
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    .login-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .login-btn:hover {
+        background-color: #0056b3;
+    }
+    .error-message {
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+    p {
+        text-align: center;
+        margin-top: 15px;
+    }
+    p a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    p a:hover {
+        text-decoration: underline;
+    }
 
 /* ==============FOOTER STYLING ======== */
 footer {
